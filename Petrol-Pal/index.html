@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petrol Pal</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL9BwLZrhcv_7aOooYeG7gqlhPFhdyyw0&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
+  </head>
+  <body>
+    <main>
+      <div class="sidebar">
+        <form id="form">
+          <img src="Logo.png" class="logo"></img>
+          <label for="startInput">Starting Location:</label>
+          <input
+            type="text"
+            id="startInput"
+            placeholder=""
+            autocomplete="off"
+          />
+          <label for="endInput">Destination: </label>
+          <input type="text" id="endInput" placeholder="" autocomplete="off" />
+          <button type="submit" class="button">Find Route</button>
+          <button type="button" id="showDirections" class="button">
+            Toggle Directions
+          </button>
+          <label class="hideWarning" id="warnText"
+            >Please fill in both fields!</label
+          >
+        </form>
+        <div class="display">
+          <h2 class="display__title">Nearby Gas Stations</h2>
+          <p id="sortByDisplay" class="display__label">Sort By: Default</p>
+          <div class="display__button-container">
+            <button id="sortDurationButton" class="button sortButton">
+              Duration
+            </button>
+            <button id="sortDistanceButton" class="button sortButton">
+              Distance
+            </button>
+            <button id="sortPriceButton" class="button sortButton">
+              Gas Price
+            </button>
+          </div>
+          <div id="gasDisplay">
+            <h3 class="gas__notice">Please Find A Route</h3>
+          </div>
+        </div>
+      </div>
+      <div class="map__container">
+        <div id="map"></div>
+        <div id="panel"></div>
+      </div>
+    </main>
+    <script src="./helper.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
